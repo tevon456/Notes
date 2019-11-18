@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Notes
 {
-    public class SqlModel
+    public class Helper
     {
         SqlConnection connection;
         SqlCommand command;
@@ -18,6 +18,22 @@ namespace Notes
             connection.ConnectionString = ConfigurationManager.ConnectionStrings[""].ConnectionString;
             command.Connection = connection;
             command.CommandType = System.Data.CommandType.Text; 
+        }
+
+        public static void Bob()
+        {
+            var tree = 12;
+        }
+
+        public static string SelectFromWhere(string select, string from, string where)
+        {
+            string query = "Select" + select + " from " + from + " Where " + where;
+            return query;
+        }
+
+        public static void ParamaterFromInput(string parameter, object fieldorinput)
+        {
+            command.Parameters.AddWithValue(parameter, fieldorinput);
         }
     }
 }
