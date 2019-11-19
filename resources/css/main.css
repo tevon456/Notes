@@ -1,0 +1,63 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap');
+
+:root {
+    --accent: #CC3363;
+    --light-accent: #FF5376;
+    --lighter-accent: #F8C0C8;
+    --black: #2B2B2B;
+    --dark-gray: #6D6D6D;
+    --gray: #999999;
+    --light-gray: #D3D3D3;
+    --white: #F9F9F9;
+}
+
+*:focus {
+    outline: 2px solid var(--light-accent);
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background:var(--white);
+}
+
+.text-white{
+    color:var(--white);
+}
+
+.text-black {
+    color: var(--black);
+}
+
+.dp-inl{
+    display:inline-block;
+}
+
+.dp-flx{
+    display:flex;
+}
+
+.dp-blk {
+    display: block;
+}
+
+.jc-center{
+    justify-content:center;
+}
+
+.jc-start {
+    justify-content: flex-start;
+}
+
+.jc-end {
+    justify-content: flex-end;
+}
+
+.jc-space {
+    justify-content: center;
+}
+
+
+
+
+
+

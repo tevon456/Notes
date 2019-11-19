@@ -10,7 +10,6 @@ namespace Notes
         SqlCommand command;
         protected void Page_Load(object sender, EventArgs e)
         {
-       
                 connection = new SqlConnection();
                 command = new SqlCommand();
                 connection.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -18,24 +17,16 @@ namespace Notes
                 command.CommandType = System.Data.CommandType.Text;     
         }
 
+
         protected void btn_login_Click(object sender,EventArgs e)
         {
 
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
             connection.Open();
-      
+ 
             var where = "email = @email And password=@password";
             command.CommandText = Helper.SelectFromWhere("*","Users",where);
-            Helper.ParamaterFromInput("@email", TextBoxEmail.Text);
-            Helper.ParamaterFromInput("@password", TextBoxPassword.Text);
+            command.Parameters.AddWithValue("@password", TextBoxPassword.Text);
+            command.Parameters.AddWithValue("@email", TextBoxEmail.Text);
 
             connection.Close();
         }

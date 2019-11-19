@@ -1,0 +1,47 @@
+﻿/*FORM*/
+form{
+    padding:20px;
+    background:var(--lighter-accent);
+    max-width:200px;
+    display:flex;
+    justify-content:center;
+}
+
+
+/*BUTTON*/
+
+.btn{
+    border:none;
+    padding: 8px 18px;
+    margin-top:8px;
+    margin-bottom:4px;
+}
+
+.btn-black{
+    background:var(--black);
+}
+
+.btn-accent{
+    background:var(--accent);
+}
+
+.btn-accent:hover {
+    background: var(--accent);
+}
+
+.btn-black:hover {
+    background: var(--dark-gray);
+}
+
+/*INPUT*/
+
+.input{
+    border:2px solid var(--dark-gray);
+    padding:4px;
+    margin-bottom:8px;
+    color:var(--dark-gray);
+}
+
+.input::placeholder {
+    color: var(--light-gray);
+}
