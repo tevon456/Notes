@@ -53,7 +53,6 @@ C:\Users\tevon\Desktop\Notes\obj\Debug\Notes.csprojAssemblyReference.cache
 C:\Users\tevon\Desktop\Notes\obj\Debug\Notes.csproj.CopyComplete
 C:\Users\tevon\Desktop\Notes\obj\Debug\Notes.dll
 C:\Users\tevon\Desktop\Notes\obj\Debug\Notes.pdb
-C:\Users\JMDA\Desktop\Notes\obj\Debug\Notes.csprojAssemblyReference.cache
 C:\Users\JMDA\Desktop\Notes\obj\Debug\Notes.csproj.CoreCompileInputs.cache
 C:\Users\JMDA\Desktop\Notes\obj\Debug\Notes.dll
 C:\Users\JMDA\Desktop\Notes\obj\Debug\Notes.pdb
@@ -109,3 +108,4 @@ C:\Users\JMDA\Desktop\Notes\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\JMDA\Desktop\Notes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\JMDA\Desktop\Notes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\JMDA\Desktop\Notes\obj\Debug\Notes.csproj.CopyComplete
+C:\Users\JMDA\Desktop\Notes\obj\Debug\Notes.csprojAssemblyReference.cache

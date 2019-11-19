@@ -1,9 +1,9 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap');
 
 :root {
-    --accent: #CC3363;
-    --light-accent: #FF5376;
-    --lighter-accent: #F8C0C8;
+    --accent: #1BCF76;
+    --light-accent: #20FC8F;
+    --lighter-accent: #99FDCC;
     --black: #2B2B2B;
     --dark-gray: #6D6D6D;
     --gray: #999999;
@@ -12,12 +12,13 @@
 }
 
 *:focus {
-    outline: 2px solid var(--light-accent);
+    outline: 2px solid var(--accent);
 }
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
     background:var(--white);
+    margin:0px;
 }
 
 .text-white{
@@ -56,7 +57,72 @@ body {
     justify-content: center;
 }
 
+.grid-center{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
 
+.border{
+    border:1px solid var(--light-gray);
+}
+
+.shadow {
+    box-shadow: 0px 14px 18px -19px rgba(0,0,0,0.65);
+}
+
+.nav {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    top: 0px;
+    z-index: 8;
+    list-style-type: none;
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    padding: 4px;
+    background-color: #fff;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.nav li {
+    padding: 8px;
+}
+
+.nav li a {
+    padding: 8px 18px;
+    text-decoration:none;
+    color:var(--dark-gray);
+}
+
+.nav li a:hover {
+    color: var(--black);
+    font-weight:bold;
+}
+
+.lh1{
+    line-height:1;
+}
+
+.lh1-2 {
+    line-height: 1.5;
+}
+
+.lh2 {
+    line-height: 2;
+}
+
+.active {
+    color: var(--accent) !important;
+    font-weight: bold;
+}
+
+.main {
+    padding-left: 20vw;
+    padding-right: 20vw;
+    margin-top: 12vh;
+}
 
 
 
