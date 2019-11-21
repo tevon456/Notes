@@ -7,8 +7,8 @@
     <title>login</title>
     <link rel="stylesheet" href="resources/css/main.css" />
     <link rel="stylesheet" href="resources/css/input.css" />
-    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
-    <link rel="shortcut icon" href="resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css"/>
+    <link rel="shortcut icon" href="resources/icons/favicon.ico" type="image/x-icon"/>
     <script src="resources/js/main.js"></script>
 </head>
 <body onload="activeLink()">
@@ -37,15 +37,21 @@
                 <span data-balloon-length="medium" aria-label="select user type to login as, only works if you are of the selected role" data-balloon-pos="up">
                     <img src="resources/icons/user.svg" class="dp-inl" style="transform: translateY(4px);" />
                 </span>
-                <select class="input" id="Select1" >
-                    <option>User</option>
-                    <option>Admin</option>
-                </select>
+
+                <asp:DropDownList class="input" ID="DropDownListRole" runat="server">
+                    <asp:ListItem Value="">Select role</asp:ListItem>
+                    <asp:ListItem Value="user">User</asp:ListItem>
+                    <asp:ListItem Value="admin">Admin</asp:ListItem>
+                </asp:DropDownList>
 
                 <asp:Button class="btn btn-black text-white" ID="btn_login" runat="server" Text="Login" OnClick="btn_login_Click" />
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Users]"></asp:SqlDataSource>
-
-                <asp:Label ID="lb_msg" runat="server" Text="" ForeColor="Red"></asp:Label>
+                
+                <br />
+                <div  style="max-width:220px;">
+                    <asp:Label ID="lb_msg" runat="server" Text="" ForeColor="Red"></asp:Label>
+                </div>
+                
             </div>
         </form>
     </section>

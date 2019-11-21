@@ -25,7 +25,6 @@ namespace Notes
             string query = "Select" + select + " from " + from + " Where " + where;
             return query;
         }
-
         
     }
 }

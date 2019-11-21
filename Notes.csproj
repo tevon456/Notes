@@ -71,6 +71,7 @@
     <Content Include="index.aspx" />
     <Content Include="resources\css\input.css" />
     <Content Include="resources\css\main.css" />
+    <Content Include="resources\css\tab.css" />
     <Content Include="resources\icons\archive.svg" />
     <Content Include="resources\icons\check.svg" />
     <Content Include="resources\icons\favicon.ico" />
@@ -90,6 +91,7 @@
     <Content Include="resources\icons\user.svg" />
     <Content Include="resources\icons\x.svg" />
     <Content Include="resources\images\favicon.ico" />
+    <Content Include="resources\js\tab.js" />
     <Content Include="resources\js\main.js" />
     <Content Include="Web.config" />
   </ItemGroup>
