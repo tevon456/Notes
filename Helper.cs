@@ -25,6 +25,12 @@ namespace Notes
             string query = "Select" + select + " from " + from + " Where " + where;
             return query;
         }
-        
+
+        public static string InsertInto(string into, string fields, string values)
+        {
+            string query = "INSERT INTO " + into + "(" + fields + ") VALUES (" + values +")";
+            return query;
+        }
+
     }
 }

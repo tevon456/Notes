@@ -51,6 +51,8 @@
                 <div  style="max-width:220px;">
                     <asp:Label ID="lb_msg" runat="server" Text="" ForeColor="Red"></asp:Label>
                 </div>
+
+                <small>Dont have an account? <a href="/signup.aspx">Signup</a></small>
                 
             </div>
         </form>
