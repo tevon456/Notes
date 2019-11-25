@@ -20,38 +20,60 @@ namespace Notes
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             command.Connection = connection;
             command.CommandType = System.Data.CommandType.Text;
+
+
+            //
+            TextBoxSignupName.Text = "Bob Bob";
+            TextBoxSignupEmail.Text = "test@gmail.com";
+            TextBoxSignupPassword.Text = "12345678";
         }
 
         protected void btn_signup_Click(object sender, EventArgs e)
         {
             connection.Open();
-
-            command.Parameters.AddWithValue("@password", TextBoxSignupPassword.Text);
+            
+            //Check the email
+            command.CommandText = Helper.SelectFromWhere("id", "Users", "email=@email");
             command.Parameters.AddWithValue("@email", TextBoxSignupEmail.Text);
-            command.Parameters.AddWithValue("@full_name", TextBoxSignupName.Text);
 
-            var fields = "full_name,email,password,role,active";
-            var values = "@full_name,@email,@password,'user',1";
-            command.CommandText = Helper.InsertInto("users", fields, values);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                //If the email is taken right a message
+                reader.Close();
+                lb_msg.Text = "email already in use";
 
-            command.ExecuteNonQuery();
-            lb_msg.Text = "inserting data";
+            }
+            else
+            {
+                reader.Close();
+                var fields = "full_name,email,password,role,active";
+                var values = "@full_name,@email,@password,'user',1";
+                command.CommandText = Helper.InsertInto("users", fields, values);
+                command.Parameters.AddWithValue("@password", TextBoxSignupPassword.Text);
+                command.Parameters.AddWithValue("@email", TextBoxSignupEmail.Text);
+                command.Parameters.AddWithValue("@full_name", TextBoxSignupName.Text);
+                command.ExecuteNonQuery();
 
-            var reader = command.ExecuteReader();
+                lb_msg_ok.Text = "account created";
+            }
+
+            connection.Close();
+
+            //var reader = command.ExecuteReader();
 
             //if (reader.Read())
             //{
-                //initalize a session name and associated session value
-              //  Session["sessionId"] = reader[0].ToString();
-              //  reader.Close();
+            //initalize a session name and associated session value
+            //  Session["sessionId"] = reader[0].ToString();
+            //  reader.Close();
             //}
             //else
             //{
-              //  reader.Close();
-                //lb_msg.Text = "Something went wrong when processing your request";
+            //  reader.Close();
+            //lb_msg.Text = "Something went wrong when processing your request";
             //}
 
-            connection.Close();
         }
     }
 }

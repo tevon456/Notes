@@ -14,7 +14,8 @@
 <body onload="activeLink()">
     <nav>
         <ul class="nav dp-flx jc-center">
-            <li><a tabindex="0" id="nav_home" href="/index.aspx">GT Notes</a></li>
+            <li><a tabindex="0" id="nav_login" href="/index.aspx">login</a></li>
+            <li><a tabindex="0" id="nav_signup" href="/signup.aspx">signup</a></li>
             <li><a tabindex="0" id="nav_about" href="/about.aspx">about</a></li>
         </ul>
     </nav>
@@ -25,7 +26,7 @@
                 <span aria-label="email address" data-balloon-pos="up">
                     <img src="resources/icons/mail.svg" class="dp-inl" style="transform: translateY(8px);" />
                 </span>
-                <asp:TextBox class="input" type="email" placeholder="eg john@mail.com" ID="TextBoxEmail" runat="server" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"></asp:TextBox>
+                <asp:TextBox class="input" type="email" placeholder="eg john@mail.com" ID="TextBoxEmail" runat="server"></asp:TextBox>
 
                 <br />
 

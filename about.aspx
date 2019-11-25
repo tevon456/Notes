@@ -7,14 +7,15 @@
     <title>about</title>
     <link rel="stylesheet" href="resources/css/main.css" />
     <link rel="stylesheet" href="resources/css/input.css" />
-    <link rel="shortcut icon" href="resources/icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
+    <link rel="shortcut icon" href="resources/icons/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css"/>
     <script src="resources/js/main.js"></script>
 </head>
 <body onload="activeLink()">
     <nav>
         <ul class="nav dp-flx jc-center">
-            <li><a tabindex="0" id="nav_home" href="/index.aspx">GT Notes</a></li>
+            <li><a tabindex="0" id="nav_login" href="/index.aspx">login</a></li>
+            <li><a tabindex="0" id="nav_signup" href="/signup.aspx">signup</a></li>
             <li><a tabindex="0" id="nav_about" href="/about.aspx">about</a></li>
         </ul>
     </nav>

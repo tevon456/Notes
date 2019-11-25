@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>login</title>
+    <title>signup</title>
     <link rel="stylesheet" href="resources/css/main.css" />
     <link rel="stylesheet" href="resources/css/input.css" />
     <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css"/>
@@ -14,7 +14,8 @@
 <body onload="activeLink()">
     <nav>
         <ul class="nav dp-flx jc-center">
-            <li><a tabindex="0" id="nav_home" href="/index.aspx">GT Notes</a></li>
+            <li><a tabindex="0" id="nav_login" href="/index.aspx">login</a></li>
+            <li><a tabindex="0" id="nav_signup" href="/signup.aspx">signup</a></li>
             <li><a tabindex="0" id="nav_about" href="/about.aspx">about</a></li>
         </ul>
     </nav>
@@ -35,7 +36,7 @@
                     <img src="resources/icons/mail.svg" class="dp-inl" style="transform: translateY(8px);" />
                 </span>
 
-                <asp:TextBox class="input" type="email" placeholder="eg john@mail.com" ID="TextBoxSignupEmail" runat="server" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"></asp:TextBox>
+                <asp:TextBox class="input" type="email" placeholder="eg john@mail.com" ID="TextBoxSignupEmail" runat="server" ></asp:TextBox>
 
                 <br />
 
@@ -50,6 +51,7 @@
                 <br />
                 <div  style="max-width:220px;">
                     <asp:Label ID="lb_msg" runat="server" Text="" ForeColor="Red"></asp:Label>
+                    <asp:Label ID="lb_msg_ok" runat="server" Text="" ForeColor="Green"></asp:Label>
                 </div>
 
                 <small>Already have an account? <a href="/index.aspx">Login</a></small>

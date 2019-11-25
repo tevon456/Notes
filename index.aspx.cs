@@ -21,38 +21,48 @@ namespace Notes
         {
 
             connection.Open();
- 
-            var where = "email = @email And password=@password And role = @role";
+
+            if(DropDownListRole.SelectedValue.ToString() == "")
+            { 
+               lb_msg.Text = "You haven't selected your user role";
+            }
+
+            var where = "email=@email And password=@password And role=@role";
             command.CommandText = Helper.SelectFromWhere("*","Users",where);
             command.Parameters.AddWithValue("@password", TextBoxPassword.Text);
             command.Parameters.AddWithValue("@email", TextBoxEmail.Text);
             command.Parameters.AddWithValue("@role", DropDownListRole.SelectedValue);
 
-            var reader = command.ExecuteReader();
+            SqlDataReader reader = command.ExecuteReader();
 
             if (reader.Read())
             {
                 //initalize a session name and associated session value
                 Session["sessionId"] = reader[0].ToString();
+                lb_msg.Text = "reading";
+
                 reader.Close();
                 //Accept the selected value from the login select and then redirect to that page
                 switch (DropDownListRole.SelectedValue.ToString())
                 {
                     case "user":
+                        //Redirect to user homepage after login
                         Response.Redirect("home.aspx");
                         break;
                     case "admin":
+                        //Redirect to admin
                         Response.Redirect("admin.aspx");
                         break;
                     default:
-                        lb_msg.Text = "You haven't selected your user role";
+                        Response.Redirect("home.aspx");
                         break;
                 }
             }
             else
             {
+
                 reader.Close();
-                lb_msg.Text = "Something went wrong when processing your request";
+                lb_msg.Text = "It seams your credentials are incorrect or your account is deactivated";
             }
 
             connection.Close();
