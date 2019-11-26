@@ -15,17 +15,20 @@ namespace Notes
         SqlCommand command;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["sessionUser"] != null)
+            {
+                Response.Redirect("home.aspx");
+            }
+            else if (Session["sessionAdmin"] != null)
+            {
+                Response.Redirect("admin.aspx");
+            }
             connection = new SqlConnection();
             command = new SqlCommand();
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             command.Connection = connection;
             command.CommandType = System.Data.CommandType.Text;
 
-
-            //
-            TextBoxSignupName.Text = "Bob Bob";
-            TextBoxSignupEmail.Text = "test@gmail.com";
-            TextBoxSignupPassword.Text = "12345678";
         }
 
         protected void btn_signup_Click(object sender, EventArgs e)

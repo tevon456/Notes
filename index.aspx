@@ -20,27 +20,29 @@
         </ul>
     </nav>
     <section class="grid-center">
-        <form id="form1" runat="server" style="margin-top: 20vh;" class="shadow border">
+        <form id="form1" runat="server" style="margin-top: 20vh;" class="shadow border form">
             <div>
                 <h2 class="dp-blk">Login</h2>
                 <span aria-label="email address" data-balloon-pos="up">
                     <img src="resources/icons/mail.svg" class="dp-inl" style="transform: translateY(8px);" />
                 </span>
                 <asp:TextBox class="input" type="email" placeholder="eg john@mail.com" ID="TextBoxEmail" runat="server"></asp:TextBox>
-
+                <asp:RegularExpressionValidator Display="Dynamic" ID="RegularExpressionValidator1" runat="server" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ControlToValidate="TextBoxEmail" ErrorMessage="invalid email"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator1" runat="server" ErrorMessage="an email is required" ControlToValidate="TextBoxEmail"></asp:RequiredFieldValidator>
                 <br />
 
                 <span aria-label="password" data-balloon-pos="up">
                     <img src="resources/icons/key.svg" class="dp-inl" style="transform: translateY(8px);" />
                 </span>
-                <asp:TextBox class="input" type="password" placeholder="min 8 characters" ID="TextBoxPassword" runat="server"></asp:TextBox><br />
+                <asp:TextBox class="input" type="password" placeholder="min 8 characters" ID="TextBoxPassword" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator2" runat="server" ErrorMessage="password is required" ControlToValidate="TextBoxPassword"></asp:RequiredFieldValidator>
 
+                <br />
                 <span data-balloon-length="medium" aria-label="select user type to login as, only works if you are of the selected role" data-balloon-pos="up">
                     <img src="resources/icons/user.svg" class="dp-inl" style="transform: translateY(4px);" />
                 </span>
 
                 <asp:DropDownList class="input" ID="DropDownListRole" runat="server">
-                    <asp:ListItem Value="">Select role</asp:ListItem>
                     <asp:ListItem Value="user">User</asp:ListItem>
                     <asp:ListItem Value="admin">Admin</asp:ListItem>
                 </asp:DropDownList>

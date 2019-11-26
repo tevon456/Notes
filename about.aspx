@@ -28,8 +28,11 @@
         </p>
 
         <p class="lh1-2"> 
-            GT Notes was created by software engineers Tevon Davis , Gerard Neil and Daquaman.
+            GT Notes was created by software engineers
+            <asp:Label ID="Creators" runat="server" Text="" ForeColor="#0066ff"></asp:Label>.
         </p>
+
+        <asp:Label ID="VersionLabel" runat="server" Text="" ForeColor="#0066ff"></asp:Label>
     </main>
 </body>
 </html>

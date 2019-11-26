@@ -12,12 +12,14 @@
     <script src="resources/js/main.js"></script>
 </head>
 <body onload="activeLink()">
-    <nav>
-        <ul class="nav dp-flx jc-center">
-            <li><a tabindex="0" id="nav_home" href="/home.aspx">home</a></li>
-        </ul>
-    </nav>
+
     <form id="form1" runat="server">
+        <nav>
+            <ul class="nav dp-flx jc-center">
+                <li><a tabindex="0" id="nav_home" href="/home.aspx">home</a></li>
+                <li><asp:LinkButton ID="LinkLogout" runat="server" OnClick="LinkLogout_Click">log out</asp:LinkButton></li>
+            </ul>
+        </nav>
         <div>
         </div>
     </form>

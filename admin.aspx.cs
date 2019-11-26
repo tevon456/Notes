@@ -11,7 +11,16 @@ namespace Notes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           if (Session["sessionAdmin"] == null)
+            {
+                Response.Redirect("index.aspx");
+            }
+        }
 
+        protected void LinkLogout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("index.aspx");
         }
     }
 }

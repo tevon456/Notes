@@ -11,7 +11,15 @@ namespace Notes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Application["Version"] != null)
+            {
+                VersionLabel.Text = Application["Version"].ToString() + " version from state." ;
+            }
 
+            if (Application["Creators"] != null)
+            {
+                Creators.Text = Application["Creators"].ToString();
+            }
         }
     }
 }

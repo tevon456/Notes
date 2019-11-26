@@ -20,7 +20,7 @@
         </ul>
     </nav>
     <section class="grid-center">
-        <form id="form1" runat="server" style="margin-top: 20vh;" class="shadow border">
+        <form id="form1" runat="server" style="margin-top: 20vh;" class="shadow border form">
             <div>
                 <h2 class="dp-blk">Signup</h2> 
 
@@ -29,7 +29,7 @@
                 </span>
 
                 <asp:TextBox class="input" type="text" placeholder="eg john smith" ID="TextBoxSignupName" runat="server"></asp:TextBox>
-
+                <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator1" runat="server" ErrorMessage="your name is required" ControlToValidate="TextBoxSignupName"></asp:RequiredFieldValidator>
                 <br />
 
                 <span aria-label="email address" data-balloon-pos="up">
@@ -37,14 +37,17 @@
                 </span>
 
                 <asp:TextBox class="input" type="email" placeholder="eg john@mail.com" ID="TextBoxSignupEmail" runat="server" ></asp:TextBox>
-
+                <asp:RegularExpressionValidator Display="Dynamic" ID="RegularExpressionValidator2" runat="server" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ControlToValidate="TextBoxSignupEmail" ErrorMessage="invalid email"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator2" runat="server" ErrorMessage="an email is required" ControlToValidate="TextBoxSignupEmail"></asp:RequiredFieldValidator>
                 <br />
 
                 <span aria-label="password" data-balloon-pos="up">
                     <img src="resources/icons/key.svg" class="dp-inl" style="transform: translateY(8px);" />
                 </span>
-                <asp:TextBox class="input" type="password" placeholder="min 8 characters" ID="TextBoxSignupPassword" runat="server"></asp:TextBox><br />
+                <asp:TextBox class="input" type="password" placeholder="min 8 characters" ID="TextBoxSignupPassword" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator3" runat="server" ErrorMessage="password is required" ControlToValidate="TextBoxSignupPassword"></asp:RequiredFieldValidator>
 
+                <br />
                 <asp:Button class="btn btn-black text-white" ID="btn_signup" runat="server" Text="Signup" OnClick="btn_signup_Click" />
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Users]"></asp:SqlDataSource>
                 
