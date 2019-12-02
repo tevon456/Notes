@@ -49,19 +49,25 @@ namespace Notes
 
             if (reader.Read())
             {
+                Application["test"] = reader[0].ToString();
                 //initalize a session name and associated session value
-
                 //Accept the selected value from the login select and then redirect to that page
                 switch (DropDownListRole.SelectedValue.ToString())
                 {
                     case "user":
                         //Redirect to user homepage after login
                         Session["sessionUser"] = reader[0].ToString();
+                        Session["user_id"] = reader[0];
+                        Session["name"] = reader[1];
+                        Session["email"] = reader[2];
                         Response.Redirect("home.aspx");
                         break;
                     case "admin":
                         //Redirect to admin
                         Session["sessionAdmin"] = reader[0].ToString();
+                        Session["user_id"] = reader[0];
+                        Session["name"] = reader[1];
+                        Session["email"] = reader[2];
                         Response.Redirect("admin.aspx");
                         break;
                     default:

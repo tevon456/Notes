@@ -71,8 +71,10 @@
     <Content Include="admin.aspx" />
     <Content Include="home.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="NoteDetails.aspx" />
     <Content Include="resources\css\input.css" />
     <Content Include="resources\css\main.css" />
+    <Content Include="resources\css\modal.css" />
     <Content Include="resources\css\tab.css" />
     <Content Include="resources\icons\archive.svg" />
     <Content Include="resources\icons\check.svg" />
@@ -126,6 +128,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NoteDetails.aspx.cs">
+      <DependentUpon>NoteDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoteDetails.aspx.designer.cs">
+      <DependentUpon>NoteDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helper.cs" />

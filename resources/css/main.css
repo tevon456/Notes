@@ -153,5 +153,34 @@ body {
         color:#fff;
     }
 
+    .width-max{
+        width:100% !important;
+    }
 
+.plainBox{
+    background:#D3D3D3;
+    text-decoration:none;
+    color:#2B2B2B;
+    margin-bottom:2px;
+}
+.plainBox:hover {
+    background: #99FDCC;
+    color: #1BCF76;
+}
+    .plainBox a {
+        text-decoration: none;
+        color: #2B2B2B;
+        padding: 8px;
+        display:block;
+    }
+
+#ListView2_pagebtn > input {
+    border: none;
+    border: 2px;
+    padding: 7px 10px;
+    margin-top: 12px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    background: var(--black);
+}
 

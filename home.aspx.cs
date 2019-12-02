@@ -15,6 +15,7 @@ namespace Notes
             {
                 Response.Redirect("index.aspx");
             }
+            Name.Text = Session["name"].ToString();
         }
 
         protected void LinkLogout_Click(object sender, EventArgs e)
