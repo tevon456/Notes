@@ -19,7 +19,7 @@
     <form id="form1" runat="server" style="margin-top: 6vh;">
         <nav>
             <ul class="nav dp-flx jc-center">
-                <li><a tabindex="0" id="nav_home" href="/home.aspx"><asp:Label ID="Name" runat="server" Text="Label"></asp:Label></a></li>
+                <li><a tabindex="0" id="nav_home" href="/home.aspx">home</a></li>
                 <li>
                     <asp:LinkButton ID="LinkLogout" runat="server" OnClick="LinkLogout_Click">log out</asp:LinkButton></li>
                 <li><span class="btn btn-accent" onclick="MicroModal.show('modal-1');" data-micromodal-trigger="modal-1">
@@ -45,7 +45,7 @@
                         <asp:TextBox class="input width-max" ID="Title" runat="server"></asp:TextBox><br />
 
                         <asp:Label ID="Label2" runat="server" Text="Body"></asp:Label><br />
-                        <asp:TextBox class="input width-max" style="height: 300px;"  ID="Note" runat="server"></asp:TextBox><br />
+                        <asp:TextBox class="input width-max" Style="height: 300px;" ID="Note" runat="server"></asp:TextBox><br />
                     </main>
 
                     <footer class="modal__footer">
@@ -61,7 +61,7 @@
             <div class="">
                 <asp:ListView Style="margin-top: 20px;" ID="ListView2" runat="server" DataSourceID="SqlDataSourceNotesList">
                     <LayoutTemplate>
-                        <div runat="server" style="margin: 16px;"  id="lstProducts">
+                        <div runat="server" style="margin: 16px;" id="lstProducts">
                             <div runat="server" id="itemPlaceholder" />
                         </div>
                         <asp:DataPager style="margin: 16px;" class="dp-blk" ID="pagebtn" runat="server" PageSize="5">
@@ -75,10 +75,10 @@
                     </LayoutTemplate>
                     <ItemTemplate>
                         <div class="plainBox" runat="server">
-                            <asp:HyperLink ID="NoteLink" runat="server" target="NoteFrame" Text='<%# Eval("title") %>'
+                            <asp:HyperLink ID="NoteLink" runat="server" Target="NoteFrame" Text='<%# Eval("title") %>'
                                 NavigateUrl='<%# "NoteDetails.aspx?noteID=" + Eval("Id") %>' />
                         </div>
-                       
+
                     </ItemTemplate>
                 </asp:ListView>
                 <asp:SqlDataSource ID="SqlDataSourceNotesList" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [title], [Id] FROM [Notes] WHERE ([user_id] = @user_id)">
@@ -87,13 +87,12 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
-            <div style="border-left:2px solid var(--light-gray);">
-                
+            <div style="border-left: 2px solid var(--light-gray);">
+                <iframe name="NoteFrame" src="" style="width: 100%; height: 90vh; border: none; border-left: 1px solid var(--light-gray);"></iframe>
             </div>
-            <iframe name="NoteFrame" src="" style="width:100%;height:90vh;border:none;border-left:1px solid var(--light-gray);">
-            </iframe>
+
         </div>
-         <%--<script>
+        <script>
             var link = document.getElementById('NoteLink');
             link.onclick = function (event) {
                 if (event) {
@@ -104,7 +103,7 @@
 
                 document.getElementById('NoteFrame').src = link.href;
             }
-        </script>--%>
+        </script>
     </form>
 </body>
 </html>

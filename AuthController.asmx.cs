@@ -38,31 +38,30 @@ namespace Notes
             command.Parameters.AddWithValue("@password", password);
             command.Parameters.AddWithValue("@email", email);
             command.Parameters.AddWithValue("@role", role);
-
+            connection.Open();
             SqlDataReader reader = command.ExecuteReader();
 
             if (reader.Read())
             {
                 Application["test"] = reader[0].ToString();
-                string[] response = new string[] { "success", "user created" };
+                string[] response = new string[5] { "success", "user created","" ,"",""};
 
                 switch (role)
                 {
                     case "user":
                         //Redirect to user homepage after login
-                        Session["sessionUser"] = reader[0].ToString();
-                        Session["user_id"] = reader[0];
-                        Session["name"] = reader[1];
-                        Session["email"] = reader[2];
+                        //Session["sessionUser"] = reader[0].ToString();
+                        //Session["user_id"] = reader[0];
+                        //Session["name"] = reader[1];
+                        //Session["email"] = reader[2];
                         response[2] = "home.aspx";
+                        response[3] = reader[0].ToString();
+                        response[4] = reader[0].ToString();
                         break;
                     case "admin":
-                        //Redirect to admin
-                        Session["sessionAdmin"] = reader[0].ToString();
-                        Session["user_id"] = reader[0];
-                        Session["name"] = reader[1];
-                        Session["email"] = reader[2];
                         response[2] = "admin.aspx";
+                        response[3] = reader[0].ToString();
+                        response[4] = reader[0].ToString();
                         break;
                     default:
                         //Response.Redirect("home.aspx");

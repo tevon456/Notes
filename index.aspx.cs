@@ -31,58 +31,39 @@ namespace Notes
 
         protected void btn_login_Click(object sender,EventArgs e)
         {
+            AuthService.AuthControllerSoapClient client = new AuthService.AuthControllerSoapClient();
+            var res = client.Login(TextBoxPassword.Text, TextBoxEmail.Text, DropDownListRole.SelectedValue);
+            
 
-            connection.Open();
-
-            if(DropDownListRole.SelectedValue.ToString() == "")
-            { 
-               lb_msg.Text = "You haven't selected your user role";
-            }
-
-            var where = "email=@email And password=@password And role=@role";
-            command.CommandText = Helper.SelectFromWhere("*","Users",where);
-            command.Parameters.AddWithValue("@password", TextBoxPassword.Text);
-            command.Parameters.AddWithValue("@email", TextBoxEmail.Text);
-            command.Parameters.AddWithValue("@role", DropDownListRole.SelectedValue);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            if (reader.Read())
+            if(res[0] == "success")
             {
-                Application["test"] = reader[0].ToString();
-                //initalize a session name and associated session value
-                //Accept the selected value from the login select and then redirect to that page
-                switch (DropDownListRole.SelectedValue.ToString())
+                lb_msg.Text = res[2];
+                switch (DropDownListRole.SelectedValue)
                 {
                     case "user":
                         //Redirect to user homepage after login
-                        Session["sessionUser"] = reader[0].ToString();
-                        Session["user_id"] = reader[0];
-                        Session["name"] = reader[1];
-                        Session["email"] = reader[2];
-                        Response.Redirect("home.aspx");
+                        Session["sessionUser"] = res[3];
+                        Session["user_id"] = res[4];
+                        Response.Redirect(res[2]);
                         break;
                     case "admin":
                         //Redirect to admin
-                        Session["sessionAdmin"] = reader[0].ToString();
-                        Session["user_id"] = reader[0];
-                        Session["name"] = reader[1];
-                        Session["email"] = reader[2];
-                        Response.Redirect("admin.aspx");
+                        Session["sessionAdmin"] = res[3];
+                        Session["user_id"] = res[4];
+                        Response.Redirect(res[2]);
                         break;
                     default:
                         Response.Redirect("home.aspx");
                         break;
+
                 }
-                reader.Close();
+
             }
             else
             {
-                reader.Close();
-                lb_msg.Text = "It seams your credentials are incorrect or your account is deactivated";
+                lb_msg.Text = res[1];
             }
-
-            connection.Close();
+            
         }
 
      

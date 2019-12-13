@@ -15,7 +15,6 @@ namespace Notes
             {
                 Response.Redirect("index.aspx");
             }
-            Name.Text = Session["name"].ToString();
             Title.Text = "Example note title";
             Note.Text = "Example note body content";
         }
