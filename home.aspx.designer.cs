@@ -67,13 +67,22 @@ namespace Notes {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Body control.
+        /// Note control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea Body;
+        protected global::System.Web.UI.WebControls.TextBox Note;
+        
+        /// <summary>
+        /// SaveNote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SaveNote;
         
         /// <summary>
         /// ListView2 control.

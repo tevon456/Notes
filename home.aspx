@@ -29,7 +29,7 @@
 
 
 
-        <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal micromodal-slide" id="modal-1" aria-hidden="false">
             <div class="modal__overlay" tabindex="-1" data-micromodal-close>
                 <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
                     <header class="modal__header">
@@ -45,13 +45,11 @@
                         <asp:TextBox class="input width-max" ID="Title" runat="server"></asp:TextBox><br />
 
                         <asp:Label ID="Label2" runat="server" Text="Body"></asp:Label><br />
-                        <textarea class="input width-max" style="height: 300px;" id="Body" runat="server">
-
-                        </textarea>
+                        <asp:TextBox class="input width-max" style="height: 300px;"  ID="Note" runat="server"></asp:TextBox><br />
                     </main>
 
                     <footer class="modal__footer">
-                        <button class="modal__btn modal__btn-primary">Save</button>
+                        <asp:Button class="modal__btn modal__btn-primary" ID="SaveNote" runat="server" Text="Save" OnClick="SaveNote_Click" />
                         <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
                     </footer>
                 </div>
@@ -89,7 +87,9 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
-            <div style="border-left:2px solid var(--light-gray);"></div>
+            <div style="border-left:2px solid var(--light-gray);">
+                
+            </div>
             <iframe name="NoteFrame" src="" style="width:100%;height:90vh;border:none;border-left:1px solid var(--light-gray);">
             </iframe>
         </div>

@@ -16,12 +16,19 @@ namespace Notes
                 Response.Redirect("index.aspx");
             }
             Name.Text = Session["name"].ToString();
+            Title.Text = "Example note title";
+            Note.Text = "Example note body content";
         }
 
         protected void LinkLogout_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("index.aspx");
+        }
+
+        protected void SaveNote_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

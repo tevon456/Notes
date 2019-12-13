@@ -63,20 +63,6 @@ namespace Notes
 
             connection.Close();
 
-            //var reader = command.ExecuteReader();
-
-            //if (reader.Read())
-            //{
-            //initalize a session name and associated session value
-            //  Session["sessionId"] = reader[0].ToString();
-            //  reader.Close();
-            //}
-            //else
-            //{
-            //  reader.Close();
-            //lb_msg.Text = "Something went wrong when processing your request";
-            //}
-
         }
     }
 }

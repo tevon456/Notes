@@ -21,6 +21,9 @@
                 <li>
                     <asp:Label ID="Title" runat="server" Text="Loading..."></asp:Label>
                 </li>
+                <li>
+                    <asp:Button ID="Delete" runat="server" Text="Delete" BackColor="#FF3300" BorderColor="Black" BorderWidth="2" ForeColor="#333333" />
+                </li>
             </ul>
         </nav>
         <div style="margin-top:20px;" class="dp-flx jc-center">
