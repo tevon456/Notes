@@ -88,19 +88,34 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\NoteService\NoteController.disco" />
+    <None Include="Connected Services\NoteService\configuration91.svcinfo" />
+    <None Include="Connected Services\NoteService\configuration.svcinfo" />
+    <Content Include="Connected Services\NoteService\Notes.NoteService.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\NoteService\Notes.NoteService.CreateNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\NoteService\Notes.NoteService.DeleteNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\NoteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="home.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="NoteController.asmx" />
     <Content Include="NoteDetails.aspx" />
     <Content Include="resources\css\input.css" />
     <Content Include="resources\css\main.css" />
     <Content Include="resources\css\modal.css" />
     <Content Include="resources\css\tab.css" />
-    <Content Include="resources\icons\archive.svg" />
     <Content Include="resources\icons\check.svg" />
     <Content Include="resources\icons\favicon.ico" />
     <Content Include="resources\icons\file.svg" />
     <Content Include="resources\icons\folder.svg" />
-    <Content Include="resources\icons\grid.svg" />
     <Content Include="resources\icons\heart.svg" />
     <Content Include="resources\icons\help-circle.svg" />
     <Content Include="resources\icons\home.svg" />
@@ -109,10 +124,10 @@
     <Content Include="resources\icons\mail.svg" />
     <Content Include="resources\icons\more-vertical.svg" />
     <Content Include="resources\icons\plus-square.svg" />
+    <Content Include="resources\icons\refresh-ccw.svg" />
     <Content Include="resources\icons\type.svg" />
     <Content Include="resources\icons\unlock.svg" />
     <Content Include="resources\icons\user.svg" />
-    <Content Include="resources\icons\x.svg" />
     <Content Include="resources\images\favicon.ico" />
     <Content Include="resources\js\tab.js" />
     <Content Include="resources\js\main.js" />
@@ -143,6 +158,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\NoteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -156,6 +176,10 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NoteController.asmx.cs">
+      <DependentUpon>NoteController.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="NoteDetails.aspx.cs">
       <DependentUpon>NoteDetails.aspx</DependentUpon>
@@ -175,6 +199,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\NoteService\NoteController.wsdl" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -188,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AuthService\" />
+    <WCFMetadataStorage Include="Connected Services\NoteService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

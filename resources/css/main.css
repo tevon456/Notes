@@ -179,8 +179,14 @@ body {
     border: 2px;
     padding: 7px 10px;
     margin-top: 12px;
+    color:white !important;
     cursor: pointer;
     margin-bottom: 4px;
     background: var(--black);
+}
+
+#ListView2_pagebtn > input[disabled="disabled"] {
+   opacity:0.5;
+   cursor:not-allowed;
 }
 

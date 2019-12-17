@@ -36,5 +36,13 @@ namespace Notes
             return query;
         }
 
+        public static string DeleteFrom(string table, string condition)
+        {
+            string query = "DELETE FROM "+table+" WHERE "+condition+" ";
+            return query;
+        }
+
+        
+
     }
 }

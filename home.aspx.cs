@@ -27,7 +27,15 @@ namespace Notes
 
         protected void SaveNote_Click(object sender, EventArgs e)
         {
+            NoteService.NoteControllerSoapClient client = new NoteService.NoteControllerSoapClient();
+            client.CreateNote(Title.Text, Note.Text, Session["user_id"].ToString());
+            Response.Redirect("home.aspx");
+        }
 
+        protected void Refresh_Click(object sender, EventArgs e)
+        {
+            //REFRESH
+            Response.Redirect("home.aspx");
         }
     }
 }

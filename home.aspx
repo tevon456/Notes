@@ -20,8 +20,10 @@
         <nav>
             <ul class="nav dp-flx jc-center">
                 <li><a tabindex="0" id="nav_home" href="/home.aspx">home</a></li>
-                <li>
+                <li >
                     <asp:LinkButton ID="LinkLogout" runat="server" OnClick="LinkLogout_Click">log out</asp:LinkButton></li>
+                <li title="reload"><span class="btn btn-blue" onclick="location.reload();">
+                    <img src="resources/icons/refresh-ccw.svg" width="20px" height="20px" class="dp-inl" style="transform: translateY(3px);" /></span></li>
                 <li><span class="btn btn-accent" onclick="MicroModal.show('modal-1');" data-micromodal-trigger="modal-1">
                     <img src="resources/icons/plus-square.svg" width="20px" height="20px" class="dp-inl" style="transform: translateY(6px);" />new note</span></li>
             </ul>
@@ -88,7 +90,7 @@
                 </asp:SqlDataSource>
             </div>
             <div style="border-left: 2px solid var(--light-gray);">
-                <iframe name="NoteFrame" src="" style="width: 100%; height: 90vh; border: none; border-left: 1px solid var(--light-gray);"></iframe>
+                <iframe name="NoteFrame" src="" style="width: 80vw; height: 90vh; border: none; border-left: 1px solid var(--light-gray);"></iframe>
             </div>
 
         </div>

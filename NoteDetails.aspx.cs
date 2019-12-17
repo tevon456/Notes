@@ -38,5 +38,12 @@ namespace Notes
             }
             connection.Close();
         }
+
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            NoteService.NoteControllerSoapClient client = new NoteService.NoteControllerSoapClient();
+            client.DeleteNote(Request.QueryString["noteID"]);
+            Response.Redirect("NoteDetails.aspx?noteID=1");
+        }
     }
 }

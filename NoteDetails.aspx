@@ -22,7 +22,7 @@
                     <asp:Label ID="Title" runat="server" Text="Loading..."></asp:Label>
                 </li>
                 <li>
-                    <asp:Button ID="Delete" runat="server" Text="Delete" BackColor="#FF3300" BorderColor="Black" BorderWidth="2" ForeColor="#333333" />
+                    <asp:Button ID="Delete" runat="server" Text="Delete" style="padding:8px 18px" BackColor="#FF9999" BorderColor="White" BorderWidth="4px" ForeColor="Red" OnClick="Delete_Click" BorderStyle="None" Font-Bold="True" />
                 </li>
             </ul>
         </nav>
